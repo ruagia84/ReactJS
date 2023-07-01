@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animals</title>
+</head>
+<body>
+    <script>
+        const animals = new Set (["Monkey", "Pig", "Elephant", "Turtle", "Pig"]);
+        animals.has("Monkey");
+        animals.add("Sparrow");
+        animals.delete("Elephant");
+         console.log(animals);
+
+        const newAnimals = [...animals];
+        console.log(newAnimals);
+    </script>
+</body>
+</html>
