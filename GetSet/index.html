@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        class Base {
+            constructor (base1, base2){
+                this._base1 = base1;
+                this._base2 = base2;
+            }
+
+            commonMethod()
+            {}
+        }
+
+        class Animals extends Base{
+            newMethod()
+            {
+                this.commonMethod();
+            }
+        }
+
+        class Person extends Base
+        {
+            constructor(base1, base2, name, yearOfBirth, homeTown){
+                super(base1, base2); //this._base1 = base1; this._base2 = base2
+                this._name = name;
+                this._yearOfBirth = yearOfBirth;
+                this._homeTown = homeTown;
+            }
+
+            static world()
+            {
+                return 8;
+            }
+           
+
+            get programmingLanguage(){
+                return this._name;
+            }
+
+            set programmingLanguage(newLanguage){
+                this._name = newValue;
+            }
+            
+            walk(distance){
+                console.log(this._name + " walk " + distance)
+            }
+            //in homeTown từng người
+            printHomeTown () {
+                console.log(this._homeTown)
+            }
+            printInfo(){
+                console.log(this._name + "---" + this._homeTown)
+            }
+        }
+        const person1 = new Person("Tuan", 1984, "Tiền Giang")
+        const person2 = new Person("Thanh", 1983, "Hóc Môn")
+        const person3 = new Person("Quang", 1994, "Hồ Chí Minh")
+
+        person1.go(3)
+        person2.go(5)
+        person3.go(7)
+
+        person1.printHomeTown();
+        person2.printHomeTown();
+        person3.printHomeTown();
+
+        person3.printInfo();
+
+        person3.name = "Tiến"
+        console.log(person3.name)
+        person3.printInfo();
+    </script>
+</body>
+</html>
